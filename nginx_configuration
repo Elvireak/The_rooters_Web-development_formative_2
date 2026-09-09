@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name localhost;
+    root /var/www/the_rooters;
+    index index.html;
+
+    add_header Group-Name "The_rooters";
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+}
+
